@@ -15,7 +15,7 @@ before_install:
 - go get -v -t -d ./...
 
 after_success:
-- echo "🎉🎉SUCCESS🎉🎉"
+- echo "\033[1;32m🎉🎉SUCCESS🎉🎉 \033[0m"
 
 script: 
 - go get -v -t -d ./...
@@ -23,4 +23,4 @@ script:
 - go test -v
 
 after_failure:
-- echo "😔😔FAILURE😔😔"
+- echo "\033[1;31m😔😔FAILURE😔😔 \033[0m"
