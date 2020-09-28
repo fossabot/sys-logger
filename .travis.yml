@@ -15,12 +15,9 @@ before_install:
 - go get -v -t -d ./...
 
 after_success:
-- echo "\033[1;32m🎉🎉SUCCESS🎉🎉 \033[0m"
+- bash <(curl -s https://codecov.io/bash)
 
 script: 
 - go get -v -t -d ./...
 - go build .
 - go test -v
-
-after_failure:
-- echo "\033[1;31m😔😔FAILURE😔😔 \033[0m"
