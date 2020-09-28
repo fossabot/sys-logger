@@ -6,26 +6,6 @@ import (
 	"time"
 )
 
-func TestLog(t *testing.T) {
-	type args struct {
-		i string
-	}
-	tests := []struct {
-		name    string
-		args    args
-		wantLog string
-	}{
-		// TODO: Add testcases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if gotLog := Log(tt.args.i); gotLog != tt.wantLog {
-				t.Errorf("Log() = %v, want %v", gotLog, tt.wantLog)
-			}
-		})
-	}
-}
-
 func Test_format(t *testing.T) {
 	var textF string = "2006-01-02 15:04:05"
 	type args struct {
