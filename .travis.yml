@@ -1,34 +1,22 @@
-# Lanuguage set to Go
 language: go
 
-# OS setup
-os: linux
-dist: xenial
+os:
+- linux
+- osx
+- 
 
-# Make git commands silent
-git:
-  quiet: true
+go:
+- 1.13.x
+- 1.14.x
+- 1.15.x
 
-# Install all dependencies
-install:
+before_install:
 - go get -v -t -d ./...
-
-jobs:
-  include:
-    go:
-    - 1.12.x
-    - 1.13.x
-    - 1.14.x
-    - 1.15.x
-
-  - name: 🧪Tests
-    script:
-    - go get -v -t -d ./...
-    - go build .
-    - go test -v -race -coverprofile=coverage.txt -covermode=atomic
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 
 script: 
-
+- go get -v -t -d ./...
+- go build .
+- go test -v -race -coverprofile=coverage.txt -covermode=atomic
