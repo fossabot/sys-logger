@@ -21,4 +21,4 @@ after_success:
 script: 
 - go get -v -t -d ./...
 - go build .
-- go test -v
+- go test -v -race -coverprofile=coverage.txt -covermode=atomic
