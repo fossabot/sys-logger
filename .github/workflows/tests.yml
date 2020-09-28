@@ -41,6 +41,3 @@ jobs:
 
     - name: Test
       run: go test -v .
-
-    # - name: Checks
-    #   run: bash <(curl -s https://codecov.io/bash)
