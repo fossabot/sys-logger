@@ -21,40 +21,73 @@ import (
 	"testing"
 )
 
-// ? I am yet unable to get this test working. Any ideas
 func TestNewPencil(t *testing.T) {
 	type args struct {
 		path string
 	}
 	tests := []struct {
-		name string
-		args args
-		want Pencil
+		name    string
+		args    args
+		want    Pencil
+		wantErr bool
 	}{
 		{
 			"Alpha",
 			args{"./tests/log/alpha.txt"},
-			Pencil{filePath: "./tests/log/alpha.txt",},
+			Pencil{filePath: "./tests/log/alpha.txt",}, 
+			false,
 		},
 		{
 			"Beta",
 			args{"./tests/log/beta.txt"},
-			Pencil{filePath: "./tests/log/beta.txt",},
+			Pencil{filePath: "./tests/log/beta.txt",}, 
+			false,
 		},
 		{
 			"Gamma",
 			args{"./tests/log/gamma.txt"},
-			Pencil{filePath: "./tests/log/gamma.txt",},
+			Pencil{filePath: "./tests/log/gamma.txt",}, 
+			false,
 		},
 		{
 			"Lambda",
 			args{"./tests/log/lambda.txt"},
-			Pencil{filePath: "./tests/log/lambda.txt",},
+			Pencil{filePath: "./tests/log/lambda.txt",}, 
+			false,
+		},
+		{
+			"ErrAlpha",
+			args{""},
+			Pencil{}, 
+			true,
+		},
+		{
+			"ErrBeta",
+			args{""},
+			Pencil{}, 
+			true,
+		},
+		{
+			"ErrGamma",
+			args{""},
+			Pencil{}, 
+			true,
+		},
+		{
+			"ErrLambda",
+			args{""},
+			Pencil{filePath: "",}, 
+			true,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := NewPencil(tt.args.path); !reflect.DeepEqual(got, tt.want) {
+			got, err := NewPencil(tt.args.path)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("NewPencil() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewPencil() = %v, want %v", got, tt.want)
 			}
 		})

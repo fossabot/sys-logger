@@ -18,7 +18,7 @@ package logger
 
 import (
 	"os"
-	"log"
+	"errors"
 )
 
 // Pencil data type will be used
@@ -34,11 +34,11 @@ type Pencil struct {
 // * Getters and setters below.
 
 // NewPencil returns a new Pencil or an error.
-func NewPencil(path string) Pencil {
+func NewPencil(path string) (Pencil, error) {
 	if _, err := os.Stat(path); os.IsNotExist(err) {
-		log.Fatalln("Cannot read file. Please provide a file with read and write privileges.")
+		return Pencil{}, errors.New("Cannot read file. Please provide a file with read and write privileges")
 	}
 	return Pencil{
 		filePath: path,
-	}
+	}, nil
 }
