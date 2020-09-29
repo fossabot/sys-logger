@@ -1,19 +1,25 @@
 language: go
 
 os:
-- linux
+  - linux
 
 go:
-- 1.13.x
-- 1.14.x
-- 1.15.x
+  - 1.13.x
+  - 1.14.x
+  - 1.15.x
 
 install:
-- go get -v -t -d ./...
+  - go get -v -t -d ./...
 
-after_success:
-- bash <(curl -s https://codecov.io/bash)
+before_script:
+  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
 
 script: 
-- go build .
-- go test -v -race -coverprofile=coverage.txt -covermode=atomic
+  - go build .
+  - fossa init
+  - fossa analyze
+  - go test -v -race -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  - fossa test
