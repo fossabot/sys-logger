@@ -7,6 +7,7 @@
 ![Made with Go](https://forthebadge.com/images/badges/made-with-go.svg)
 ![Built with science](https://forthebadge.com/images/badges/built-with-science.svg)
 ![Check it out](https://forthebadge.com/images/badges/check-it-out.svg)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAbhigyanKumar%2Fsys-logger.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2FAbhigyanKumar%2Fsys-logger?ref=badge_small)
 
 # Sys-Logger
 A simple logging application for you, in Go. This is under **maintainence**.
@@ -14,4 +15,4 @@ A simple logging application for you, in Go. This is under **maintainence**.
 # License
 The code is _open source_ under the Eclipse **Public License - v 2.0**.
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAbhigyanKumar%2Fsys-logger.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAbhigyanKumar%2Fsys-logger?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAbhigyanKumar%2Fsys-logger.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAbhigyanKumar%2Fsys-logger?ref=badge_large)
