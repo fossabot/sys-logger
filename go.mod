@@ -1,3 +1,2 @@
-module github.com/AbhigyanKumar/sys-logger
-
+module github.com/AbhigyanKumar/pencil
 go 1.15
