@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/AbhigyanKumar/sys-logger.svg?branch=master)](https://travis-ci.com/AbhigyanKumar/sys-logger)
-![codecov](https://codecov.io/gh/AbhigyanKumar/sys-logger/branch/master/graph/badge.svg?token=THGH4E4J0Z)
+[![codecov](https://codecov.io/gh/AbhigyanKumar/sys-logger/branch/master/graph/badge.svg?token=THGH4E4J0Z)](https://codecov.io/gh/AbhigyanKumar/sys-logger)
 ![Repo Size](https://img.shields.io/github/repo-size/AbhigyanKumar/sys-logger?color=light-green)
 ![License](https://img.shields.io/github/license/AbhigyanKumar/sys-logger)
 
